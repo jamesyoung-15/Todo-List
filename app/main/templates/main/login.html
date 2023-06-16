@@ -14,10 +14,27 @@
             <i class="fa-solid fa-lock"></i>
             {{form.password}}
         </div>
+
+        {% if form.non_field_errors %}
+        <div class="login-error">  
+            <p>Error, incorrect login information.</p>
+        </div>
+        {% endif %}
+        <!-- {% if form.username.errors %}
+        <div class="login-error">  
+            <p>Error, incorrect login information.</p>
+        </div>
+        {% elif form.password.errors %}
+        <div class="login-error">  
+            <p>Error, incorrect login information.</p>
+        </div>
+        {% endif %} -->
+
         <div class="login-submit">
             <input type="submit" value="Login">
         </div>
     </form>
+
     <div class="login-back">
         <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
     </div>

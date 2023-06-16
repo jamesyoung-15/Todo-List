@@ -1,0 +1,30 @@
+FROM python:3-alpine
+
+# Ensure any python output will be sent to log
+ENV PYTHONBUFFERED=1
+
+# set environment variables
+# ENV PYTHONDONTWRITEBYTECODE 1
+# ENV PYTHONUNBUFFERED 1
+
+# set work directory
+WORKDIR /usr/src/app
+
+# install psycopg2 dependencies
+RUN apk update \
+    && apk add postgresql-dev gcc python3-dev musl-dev
+
+# install dependencies
+RUN pip install --upgrade pip
+COPY ./requirements.txt .
+RUN pip install -r requirements.txt
+
+
+# copy project
+COPY . .
+
+# bind to port 9000
+CMD gunicorn DjangoProject.wsgi:application --bind 0.0.0.0:9000
+
+# expose port 9000
+EXPOSE 9000
