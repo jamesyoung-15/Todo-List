@@ -1,0 +1,15 @@
+{% extends 'main/template.html' %}
+{% block content %}
+<section class="login-container">
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete this?</p>
+        <div class="login-submit">
+            <input type="submit" value="Delete">
+        </div>
+    </form>
+    <div class="login-back">
+        <a href="{% url 'tasks' %}">Go Back</a>
+    </div>
+</section>
+{% endblock content %}

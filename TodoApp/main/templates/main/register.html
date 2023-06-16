@@ -1,0 +1,42 @@
+{% extends 'main/template.html' %}
+{% block content %}
+<section class="login-container">
+    <h1>Register</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="input-login">
+                <i class="fa-solid fa-user"></i>
+                {{form.username}}
+        </div>
+        <div class="input-login">
+                <i class="fa-solid fa-lock"></i>
+                {{form.password1}}
+        </div>
+        <div class="input-login">
+                <i class="fa-solid fa-lock"></i>
+                {{form.password2}}
+        </div>
+            {{ form.non_field_errors }}
+            {% if form.username.errors %}
+            <div class="login-error">  
+                <p>Error, username already taken.</p>
+            </div>
+            {% elif form.password1.errors %}
+            <div class="login-error">  
+                {{form.password1.errors}}
+            </div>
+            {% elif form.password2.errors %}
+            <div class="login-error">  
+                {{form.password2.errors}}
+            </div>
+            {% endif %}
+        
+        <div class="login-submit">
+            <input type="submit" value="Register">
+        </div>
+    </form>
+    <div class="login-back">
+        <p>Already have an account? <a href="{% url 'userlogin' %}">Login</a></p>
+    </div>
+</section>
+{% endblock content %}

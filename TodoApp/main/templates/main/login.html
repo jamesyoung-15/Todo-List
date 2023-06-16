@@ -1,0 +1,28 @@
+{% extends 'main/template.html' %}
+{% block content %}
+
+<section class="login-container">
+    <h1>Login</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="input-login">
+            <i class="fa-solid fa-user"></i>
+            {{form.username}}
+        </div>
+        <div class="input-login">
+            <i class="fa-solid fa-lock"></i>
+            {{form.password}}
+        </div>
+        <div class="login-submit">
+            <input type="submit" value="Login">
+        </div>
+    </form>
+    <div class="login-back">
+        <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+    </div>
+
+</section>
+
+
+{% endblock content %}

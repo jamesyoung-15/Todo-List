@@ -1,0 +1,28 @@
+{% extends 'main/template.html' %}
+{% block content %}
+<section class="task-creation-container">
+    <h1>Add Task</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        <!-- {{form.as_p}} -->
+        <div class="task-creation-input">
+            <label>Title: </label>
+            {{form.title}}
+        </div>
+        <div class="task-creation-input">
+            <label>Task Description: </label>
+            {{form.description}}
+        </div>
+        <div class="task-creation-checkbox">
+            <label>Mark as Complete: </label>
+            {{form.complete}}
+        </div>
+        <div class="task-submit">
+            <input type="submit" name="" id="" value="Submit">
+        </div>
+    </form>
+    <div class="task-back">
+        <a href="{% url 'tasks' %}">Back</a>
+    </div>
+</div>
+{% endblock content %}
