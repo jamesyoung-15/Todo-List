@@ -202,6 +202,7 @@ body{
 
 .task-title s{
     text-decoration: line-through;
+    margin-left: 10px;
 }
 
 
@@ -262,11 +263,12 @@ body{
 
 .task-add{
     font-size: 24px;
+    margin: 0 20px;
 }
 
 .task-creation-container{
     max-width: 600px;
-    margin: 50% auto 0;
+    margin: 20% auto 0;
     background-color: white;
     padding: 45px;
     border-radius: 12px;
@@ -274,7 +276,7 @@ body{
     color: black;
     text-align: center;
     font-size: 18px;
-    width: 600px;
+    width: 570px;
 }
 
 .task-creation-input textarea, .task-creation-input input{
@@ -341,9 +343,31 @@ body{
     color: #7c5cff;
 }
 
+.no-margin{
+    margin: 0 !important;
+}
+
+footer{
+    margin: 50px 0;
+    text-align: center;
+    color: white;
+}
+.github-link a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.github-link a:hover{
+    color: #7c5cff;
+}
 
 @media screen and (max-width: 600px) {
     .login-container{
+        width: 350px;
+    }
+    .task-container{
         width: 350px;
     }
     .navbar ul{
@@ -352,5 +376,48 @@ body{
     .navbar{
         justify-content: center;
     }
+    .task-creation-container{
+        width: 350px;
+    }
+    .input-search{
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 400px) {
+    .login-container{
+        width: 280px;
+    }
+    .task-container{
+        width: 280px;
+    }
+    .navbar ul{
+        display: none;
+    }
+    .navbar{
+        justify-content: center;
+    }
+    .navbar button{
+        padding: 5px 10px;
+    }
+    .task-creation-container{
+        width: 280px;
+    }
+
+    .input-search{
+        width: 50%;
+    }
+    .task-ongoing, .task-complete{
+        display: none;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .nav-logo{
+        display: none;
+    }
+    
+    
     
 }

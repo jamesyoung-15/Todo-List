@@ -5,7 +5,7 @@
     <nav class="navbar">
         <a href="#" class="nav-logo"><i class="fa-solid fa-rectangle-list"></i>Todo Manager</a>
         <ul>
-            <li><a target="_blank" href="https://github.com/jamesyoung-15/Todo-List">Source Code</a></li>
+            <li><a target="_blank" href="https://github.com/jamesyoung-15/Todo-List">About</a></li>
         </ul>
         <a href="{% url 'logout' %}"><button>Logout</button></a>
     </nav>
@@ -43,7 +43,7 @@
                     {% if task.complete %}
                         <div class="task-title">
                             <div class="task-complete"></div>
-                            <s><a href="{% url 'taskupdate' task.pk %}">{{task}}</a></s>
+                            <s><a href="{% url 'taskupdate' task.pk %}" class="no-margin">{{task}}</a></s>
                         </div>
                         <div class="task-edit">
                             <a href="{% url 'taskupdate' task.pk %}"><i class="fa-solid fa-pen"></i></a>
