@@ -1,10 +1,7 @@
 # To-Do List with Django
-Created a To-Do List Application with Django. Users can create an account to create, read, update, and delete different tasks. Purpose is for learning Django framework and hosting an application. Link to project [here](https://todo.jamesyy.info/).
-
-## Preview
-
-
 ![](./src/screenshot.png)
+
+Created a To-Do List Application with Django. Users can create an account to create, read, update, and delete different tasks. Purpose is for learning basics of Django framework and hosting an application. Link to project [here](https://todo.jamesyy.info/).
 
 ## Application Tech Stack
 - Front-end: HTML/CSS
