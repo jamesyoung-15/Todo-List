@@ -1,3 +1,4 @@
 .env.prod*
 .vscode
 .env.staging*
+*__pycache__*
